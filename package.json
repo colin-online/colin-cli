@@ -1,0 +1,14 @@
+{
+  "name": "colin-cli",
+  "version": "1.0.0",
+  "description": "colin-cli 脚手架",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
