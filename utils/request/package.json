@@ -1,7 +1,7 @@
 {
-  "name": "@colin-cli/init",
+  "name": "@colin-cli/request",
   "version": "1.0.0",
-  "description": "colin-cli init",
+  "description": "colin-cli request",
   "author": "linhaidong3 <linhaidong3@jd.com>",
   "homepage": "",
   "license": "ISC",
@@ -14,7 +14,7 @@
     "lib"
   ],
   "publishConfig": {
-    "access": "public"
+    "registry": "http://registry.m.jd.com/"
   },
   "repository": {
     "type": "git",
@@ -24,14 +24,6 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@colin-cli/command": "file:../../models/command",
-    "@colin-cli/package": "file:../../models/package",
-    "@colin-cli/request": "file:../../utils/request",
-    "@colin-cli/utils": "file:../../utils/utils",
-    "@colin-cli/log": "file:../../utils/log",
-    "fs-extra": "^10.0.0",
-    "inquirer": "^8.2.0",
-    "semver": "^7.3.5",
-    "user-home": "^3.0.0"
+    "axios": "^0.26.0"
   }
 }
