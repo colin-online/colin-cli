@@ -1,5 +1,6 @@
 'use strict';
 
+const file = require('./file');
 const spinner = require('./spinner');
 
 // 类型判断
@@ -8,7 +9,7 @@ function isObject(o){
 }
 
 // 延迟加载
-function sleep(timeout) {
+function sleep(timeout = 1000) {
   return new Promise((resolve => {
     setTimeout(resolve, timeout);
   }));
@@ -43,4 +44,5 @@ module.exports = {
     spinner,
     exec,
     execAsync,
+    file,
 };

@@ -57,9 +57,10 @@ async function getNpmSemverVersion(npmName, baseVersion, registry) {
 
 // 获取最新版本号
 async function getNpmLatestVersion(npmName, registry) {
-    let versions = await getNpmVersions(npmName, registry);
-    if (versions) {
-        return versions.sort((a, b) => semver.gt(b, a))[0];
+    let result = await getNpmInfo(npmName, registry);
+    const { latest } = result['dist-tags'] || {};
+    if (latest) {
+        return latest;
     }
     return null;
 }
