@@ -2,7 +2,7 @@
   "name": "@colin-cli/core",
   "version": "1.0.0",
   "description": "colin-cli core",
-  "author": "colin <80868215@qq.com>",
+  "author": "东林 <80868215@qq.com>",
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
@@ -16,12 +16,12 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://gitee.com/colin-lin/colin-cli.git"
-  },
-  "scripts": {
-    "test": "echo \"run testing from core\""
   },
   "dependencies": {
     "@colin-cli/get": "file:../../utils/get",

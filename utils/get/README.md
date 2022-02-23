@@ -1,11 +1,11 @@
-# `get`
+# `@colin-cli/get`
 
 > TODO: description
 
 ## Usage
 
 ```
-const get = require('get');
+const get = require('@colin-cli/get');
 
 // TODO: DEMONSTRATE API
 ```

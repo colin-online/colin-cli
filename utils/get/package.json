@@ -1,9 +1,8 @@
 {
-  "name": "get",
+  "name": "@colin-cli/get",
   "version": "1.0.0",
-  "description": "get",
-  "author": "colin <80868215@qq.com>",
-  "homepage": "",
+  "description": "colin-cli get",
+  "author": "东林 <80868215@qq.com>",
   "license": "ISC",
   "main": "lib/index.js",
   "directories": {
@@ -13,12 +12,12 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://gitee.com/colin-lin/colin-cli.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
     "axios": "^0.26.0",

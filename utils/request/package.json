@@ -2,7 +2,7 @@
   "name": "@colin-cli/request",
   "version": "1.0.0",
   "description": "colin-cli request",
-  "author": "linhaidong3 <linhaidong3@jd.com>",
+  "author": "东林 <80868215@qq.com>",
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
@@ -14,14 +14,11 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "http://registry.m.jd.com/"
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "https://gitee.com/colin-lin/colin-cli.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
     "axios": "^0.26.0"

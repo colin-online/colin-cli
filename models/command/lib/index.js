@@ -34,7 +34,7 @@ class Command {
     const currentVersion = process.version;
     const lowestVersion = LOWEST_NODE_VERSION;
     if (!semver.gte(currentVersion, lowestVersion)) {
-        throw new Error(colors.red(`colin-cli 需要安装 v${lowestVersion} 以上版本的 Node.js`))
+        throw new Error(colors.red(`大佬，不好意思！colin-cli 需要安装 v${lowestVersion} 及以上版本的 Node.js`))
     }
   }
 

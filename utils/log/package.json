@@ -5,7 +5,7 @@
   "keywords": [
     "log"
   ],
-  "author": "linhaidong3 <linhaidong3@jd.com>",
+  "author": "东林 <80868215@qq.com>",
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
@@ -22,9 +22,6 @@
   "repository": {
     "type": "git",
     "url": "https://gitee.com/colin-lin/colin-cli.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
     "npmlog": "^6.0.1"

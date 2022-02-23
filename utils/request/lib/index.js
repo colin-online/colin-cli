@@ -2,11 +2,11 @@
 
 const axios = require('axios');
 
-const BASE_URL = process.env.COLIN_CLI_BASE_URL ? process.env.COLIN_CLI_BASE_URL : 'http://colin-online.local:7001';
+const BASE_URL = 'http://124.222.52.186:7001';
 
 const service = axios.create({
   baseURL: BASE_URL,
-  timeout: 30000,
+  timeout: 10000,
 });
 
 service.interceptors.request.use(
@@ -23,6 +23,26 @@ service.interceptors.response.use(
     return response.data;
   },
   error => {
+    // 兜底
+    return [
+      {
+        name: 'React官方模版',
+        npmName: '@colin-cli/react-official-template',
+        version: '1.0.0',
+        type: 'normal',
+        installCommand: 'npm install',
+        startCommand: 'npm start',
+        buildPath: 'dist',
+        tags: ['project'],
+        ignore: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/.vscode/**',
+          '**/.DS_Store',
+          '**/public/**'
+        ]
+      },
+    ]
     return Promise.reject(error);
   },
 );

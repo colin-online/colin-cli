@@ -21,7 +21,7 @@ const TYPE_COMPONENT = 'component';
 const TEMPLATE_TYPE_NORMAL = 'normal';
 const TEMPLATE_TYPE_CUSTOM = 'custom';
 
-const WHITE_COMMAND = ['npm', 'yarn', 'cnpm', 'taobao', 'nj', 'npmMirror', 'edunpm', 'jd', 'jdnpm'];
+const WHITE_COMMAND = ['npm', 'yarn', 'cnpm', 'taobao', 'nj', 'npmMirror', 'edunpm'];
 
 class InitCommand extends Command {
   // 初始化
@@ -130,7 +130,7 @@ class InitCommand extends Command {
 
     // 过滤项目/组件类型
     this.templateList = this.templateList.filter(template => template.tags.includes(type));
-    if(!this.templateList.length){
+    if (!this.templateList.length) {
       throw new Error('获取模版失败，无法执行创建！');
     }
 
@@ -187,22 +187,22 @@ class InitCommand extends Command {
         }
       },
     },
-    {
-      type: 'list',
-      name: 'projectTemplate',
-      message: `请选择${title}模板`,
-      choices: this.createTemplateChoice(this.templateList),
-      validate: function (v) {
-        const done = this.async();
-        setTimeout(function () {
-          if (v) {
-            done('模版不存在，无法创建！');
-            return;
-          }
-          done(null, true);
-        }, 0);
-      },
-    });
+      {
+        type: 'list',
+        name: 'projectTemplate',
+        message: `请选择${title}模板`,
+        choices: this.createTemplateChoice(this.templateList),
+        validate: function (v) {
+          const done = this.async();
+          setTimeout(function () {
+            if (v) {
+              done('模版不存在，无法创建！');
+              return;
+            }
+            done(null, true);
+          }, 0);
+        },
+      });
     // 获取项目的基本信息
     if (type === TYPE_PROJECT) {
       const project = await inquirer.prompt(projectPrompt);
@@ -211,7 +211,7 @@ class InitCommand extends Command {
         ...project,
         type,
       };
-    } 
+    }
     // 获取组件的基本信息
     else if (type === TYPE_COMPONENT) {
       // 输入组件描述信息
@@ -283,7 +283,7 @@ class InitCommand extends Command {
       } finally {
         spinnerStart.stop(true);
         if (await templatePkg.exists()) {
-          log.success('下载模板成功');
+          log.success('下载模板成功！');
           this.templatePkg = templatePkg;
         }
       }
@@ -297,7 +297,7 @@ class InitCommand extends Command {
       } finally {
         spinnerStart.stop(true);
         if (await templatePkg.exists()) {
-          log.success('更新模板成功');
+          log.success('更新模板成功！');
           this.templatePkg = templatePkg;
         }
       }
@@ -341,7 +341,7 @@ class InitCommand extends Command {
       throw e;
     } finally {
       spinnerStart.stop(true);
-      log.success('模板安装成功');
+      log.success('模板安装成功！');
     }
     const templateIgnore = this.templateInfo.ignore || [];
     const ignore = ['**/node_modules/**', ...templateIgnore]
@@ -359,7 +359,7 @@ class InitCommand extends Command {
     if (await this.templatePkg.exists()) {
       const rootFile = this.templatePkg.getRootFilePath();
       if (fs.existsSync(rootFile)) {
-        log.notice('开始执行自定义模板');
+        log.notice('开始执行自定义模板...');
         const templatePath = path.resolve(this.templatePkg.cacheFilePath, 'template');
         const options = {
           templateInfo: this.templateInfo,
@@ -370,7 +370,7 @@ class InitCommand extends Command {
         const code = `require('${rootFile}')(${JSON.stringify(options)})`;
         log.verbose('code', code);
         await execAsync('node', ['-e', code], { stdio: 'inherit', cwd: process.cwd() });
-        log.success('自定义模板安装成功');
+        log.success('自定义模板安装成功！');
       } else {
         throw new Error('自定义模板入口文件不存在！');
       }
@@ -386,7 +386,7 @@ class InitCommand extends Command {
         cwd: dir,
         ignore: options.ignore || '',
         nodir: true,
-      }, function(err, files) {
+      }, function (err, files) {
         if (err) {
           reject(err);
         }

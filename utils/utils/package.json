@@ -2,7 +2,7 @@
   "name": "@colin-cli/utils",
   "version": "1.0.0",
   "description": "colin-cli utils",
-  "author": "colin <80868215@qq.com>",
+  "author": "东林 <80868215@qq.com>",
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
@@ -16,9 +16,6 @@
   "repository": {
     "type": "git",
     "url": "https://gitee.com/colin-lin/colin-cli.git"
-  },
-  "scripts": {
-    "test": "echo \"run testing from utils\""
   },
   "dependencies": {
     "cli-spinner": "^0.2.10"

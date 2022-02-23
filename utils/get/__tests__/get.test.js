@@ -2,6 +2,6 @@
 
 const get = require('..');
 
-describe('get', () => {
+describe('@colin-cli/get', () => {
     it('needs tests');
 });
